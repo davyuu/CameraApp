@@ -1,17 +1,17 @@
-package com.example.android;
+package com.davyuu.cameraapp;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.devbrackets.android.exomedia.core.video.scale.ScaleType;
 import com.devbrackets.android.exomedia.listener.OnCompletionListener;
 import com.devbrackets.android.exomedia.listener.OnPreparedListener;
 import com.devbrackets.android.exomedia.ui.widget.EMVideoView;
-import com.example.android.mediarecorder.R;
 
 import java.io.File;
+
+import static com.devbrackets.android.exomedia.core.video.scale.ScaleType.CENTER_CROP;
 
 public class PreviewActivity extends AppCompatActivity {
 
@@ -41,7 +41,7 @@ public class PreviewActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        videoView.setScaleType(ScaleType.CENTER_CROP);
+        videoView.setScaleType(CENTER_CROP);
         videoView.setVideoPath(filePath);
         videoView.setOnPreparedListener(new OnPreparedListener() {
             @Override

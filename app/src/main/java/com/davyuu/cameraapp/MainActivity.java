@@ -1,20 +1,4 @@
-/*
- * Copyright (C) 2013 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-package com.example.android.mediarecorder;
+package com.davyuu.cameraapp;
 
 import android.app.Activity;
 import android.hardware.Camera;
@@ -27,18 +11,12 @@ import android.view.TextureView;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.android.PreviewActivity;
-import com.example.android.common.media.CameraHelper;
+import com.davyuu.cameraapp.common.CameraHelper;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * This activity uses the camera/camcorder as the A/V source for the {@link android.media.MediaRecorder} API.
- * A {@link android.view.TextureView} is used as the camera preview which limits the code to API 14+. This
- * can be easily replaced with a {@link android.view.SurfaceView} to run on older devices.
- */
 public class MainActivity extends Activity {
 
     private Camera mCamera;
@@ -53,8 +31,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sample_main);
-
+        setContentView(R.layout.activity_main);
         mPreview = (TextureView) findViewById(R.id.camera_surface_view);
         captureButton = (Button) findViewById(R.id.button_capture);
         captureButton.setOnClickListener(new View.OnClickListener() {
